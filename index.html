@@ -8,11 +8,69 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
-  <section class="header"></section>
-  <section class="profile"></section>
-  <section class="elements"></section>
-  <section class="footer"></section>
-  <section class="popup"></section>
+  <header class="header">
+    <h1 class="header__title">Mesto</h1>
+    <a href="#" class="link"><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"></a>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <img src="./images/jacques.jpg" alt="Аватар" class="profile__avatar">
+      <div class="profile__information">
+        <h2 class="profile__name">Жак-Ив Кусто Петрович-Попов-Селёдкин-Рыбкин-Хвостов</h2>
+        <button class="button profile__edit-button"></button>
+        <p class="profile__occupation">Исследователь океана Исследователь океана Исследователь океана Исследователь океана Исследователь океана</p>
+      </div>
+      <button class="button profile__add-person-button"></button>
+    </section>
+    <section class="elements">
+      <article class="card">
+        <img src="./images/place-1.jpg" alt="Фото из Карачаевска" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Карачаевск</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/place-2.jpg" alt="Фото горы Эльбрус" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Гора Эльбрус</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/place-3.jpg" alt="Фото из Домбая" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Домбай</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/place-1.jpg" alt="Фото горы Эльбрус" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Гора Эльбрус</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/place-2.jpg" alt="Фото из Домбая" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Домбай</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="./images/place-3.jpg" alt="Фото из Карачаево-Черкессии" class="card__image">
+        <div class="card__info-block">
+          <h3 class="card__title">Карачаево-Черкессия</h3>
+          <button class="button card__like-button"></button>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </footer>
+  <!-- <section class="popup"></section> -->
   <!-- <script src="./pages/script.js"></script> -->
 </body>
 </html>
