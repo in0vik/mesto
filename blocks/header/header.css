@@ -5,10 +5,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-height: 74px;
-  padding: 45px 20px 41px;
+  padding: 45px 0 41px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 980px) {
   .header {
     grid-template-columns: 1fr;
     align-items: center;

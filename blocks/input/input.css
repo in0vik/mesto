@@ -1,0 +1,16 @@
+.input {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  height: 27px;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  
+}
