@@ -9,7 +9,6 @@
 @media screen and (max-width: 980px) {
   .profile {
     grid-template-columns: 1fr;
-    align-items: center;
     gap: 26px;
     justify-items: center;
   }

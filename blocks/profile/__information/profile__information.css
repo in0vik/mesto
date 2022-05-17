@@ -14,12 +14,3 @@
     justify-items: center;
   }
 }
-
-@media screen and (max-width: 640px) {
-  .profile__information {
-    grid-template-columns: auto auto;
-    row-gap: 14px;
-    column-gap: 10px;
-    justify-items: center;
-  }
-}
