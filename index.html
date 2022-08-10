@@ -25,67 +25,55 @@
         <button class="button profile__add-person-button"></button>
       </section>
       <section class="elements">
-        <article class="card">
-          <img src="./images/place-1.jpg" alt="Фото из Карачаевска" class="card__image" />
-          <div class="card__info-block">
-            <h3 class="card__title">Карачаевск</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/place-2.jpg" alt="Фото горы Эльбрус" class="card__image" />
-          <div class="card__info-block">
-            <h3 class="card__title">Гора Эльбрус</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/place-3.jpg" alt="Фото из Домбая" class="card__image" />
-          <div class="card__info-block">
-            <h3 class="card__title">Домбай</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/place-4.jpg" alt="Фото Несвижского замка" class="card__image" />
-          <div class="card__info-block">
-            <h3 class="card__title">Несвиж</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/place-5.jpg" alt="Фото болота Ельня" class="card__image" />
-          <div class="card__info-block">
-            <h3 class="card__title">Ельня</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="./images/place-6.jpg"
-            alt="Фото храма Архангела Михаила в Сынковичах"
-            class="card__image"
-          />
-          <div class="card__info-block">
-            <h3 class="card__title">Сынковичи</h3>
-            <button class="button card__like-button"></button>
-          </div>
-        </article>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-      <form class="popup__container">
+      <!-- <form class="popup__container">
         <button class="button popup__close-button"></button>
-
         <h3 class="popup__title">Редактировать профиль</h3>
         <input class="input popup__name-input" placeholder="Имя" type="text" />
         <input class="input popup__job-input" placeholder="О себе" type="text" />
         <button class="button popup__submit-button" type="submit">Сохранить</button>
       </form>
+
+      <div class="popup__image-container">
+        <button class="button popup__close-button"></button>
+        <img class="popup__image" src="./images/place-2.jpg" alt="Фото">
+        <p class="popup__image-description">Карачаево-Черкессия</p>
+      </div> -->
     </section>
+    <template id="card-template">
+      <article class="card">
+        <img src="./images/place-2.jpg" alt="Фото горы Эльбрус" class="card__image" />
+        <div class="card__info-block">
+          <h3 class="card__title">Гора Эльбрус</h3>
+          <button class="button card__like-button"></button>
+        </div>
+        <button class="button card__delete-button"></button>
+      </article>
+    </template>
+
+    <template id="form-popup-template">
+      <form class="popup__container">
+        <button class="button popup__close-button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input class="input popup__name-input" placeholder="Имя" type="text" />
+        <input class="input popup__job-input" placeholder="О себе" type="text" />
+        <button class="button popup__submit-button" type="submit">Сохранить</button>
+      </form>
+    </template>
+
+    <template id="image-popup-template">
+      <div class="popup__image-container">
+        <button class="button popup__close-button popup__image-close-button"></button>
+        <img class="popup__image" src="./images/place-2.jpg" alt="Фото">
+        <p class="popup__image-description">Карачаево-Черкессия</p>
+      </div>
+    </template>
+   
     <script src="./pages/script.js"></script>
   </body>
 </html>
