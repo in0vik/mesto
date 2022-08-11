@@ -29,18 +29,24 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__job-input/popup__job-input.css);
-@import url(../blocks/popup/__name-input/popup__name-input.css);
-@import url(../blocks/popup/__submit-button/popup__submit-button.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_image.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_add-place.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_edit-profile.css);
+
 @import url(../blocks/popup/__image-close-button/\ popup__image-close-button.css);
-@import url(../blocks/popup/__image-container/popup__image-container.css);
 @import url(../blocks/popup/__image-description/popup__image-description.css);
 @import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__place-link-input/popup__place-link-input.css);
+@import url(../blocks/popup/__place-name-input/popup__place-name-input.css);
+@import url(../blocks/popup/__place-submit-button/popup__place-submit-button.css);
+@import url(../blocks/popup/__profile-job-input/popup__profile-job-input.css);
+@import url(../blocks/popup/__profile-name-input/popup__profile-name-input.css);
+@import url(../blocks/popup/__profile-submit-button/popup__profile-submit-button.css);
+@import url(../blocks/popup/__submit-button/popup__submit-button.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/_type/popup_type_add-place.css);
+@import url(../blocks/popup/_type/popup_type_edit-profile.css);
 @import url(../blocks/popup/_type/popup_type_image.css);
-@import url(../blocks/popup/_type/popup_type_form.css);
-
-
