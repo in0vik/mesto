@@ -28,7 +28,30 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_type_form popup_type_edit-profile">
+      <form class="popup__container popup__container_type_edit-profile">
+        <button class="button popup__close-button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
+        <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
+        <button class="button popup__submit-button popup__profile-submit-button" type="submit">Сохранить</button>
+      </form>
+    </section>
+    <section class="popup popup_type_form popup_type_add-place">
+      <form class="popup__container popup__container_type_add-place">
+        <button class="button popup__close-button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <input class="input popup__place-name-input" placeholder="Название" type="text" />
+        <input class="input popup__place-link-input" placeholder="Ссылка на картинку" type="text" />
+        <button class="button popup__submit-button popup__place-submit-button" type="submit">Создать</button>
+      </form>
+    </section>
+    <section class="popup popup_type_image">
+      <div class="popup__container_type_image">
+        <button class="button popup__close-button popup__image-close-button"></button>
+        <img class="popup__image" src="./images/place-2.jpg" alt="Фото">
+        <p class="popup__image-description">Карачаево-Черкессия</p>
+      </div>
     </section>
     <template id="card-template">
       <article class="card">
@@ -40,25 +63,6 @@
         <button class="button card__delete-button"></button>
       </article>
     </template>
-
-    <template id="form-popup-template">
-      <form class="popup__container">
-        <button class="button popup__close-button"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="input popup__name-input" placeholder="Имя" type="text" />
-        <input class="input popup__job-input" placeholder="О себе" type="text" />
-        <button class="button popup__submit-button" type="submit">Сохранить</button>
-      </form>
-    </template>
-
-    <template id="image-popup-template">
-      <div class="popup__image-container">
-        <button class="button popup__close-button popup__image-close-button"></button>
-        <img class="popup__image" src="./images/place-2.jpg" alt="Фото">
-        <p class="popup__image-description">Карачаево-Черкессия</p>
-      </div>
-    </template>
-   
     <script src="./pages/script.js"></script>
   </body>
 </html>

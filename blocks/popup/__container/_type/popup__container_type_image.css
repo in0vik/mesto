@@ -1,4 +1,4 @@
-.popup__image-container {
+.popup__container_type_image {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -6,4 +6,5 @@
   margin: 0 auto;
   line-height: 0;
   transition: 1s ease-out;
+  background-color: transparent;
 }
