@@ -32,8 +32,7 @@
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__container/_type/popup__container_type_image.css);
-@import url(../blocks/popup/__container/_type/popup__container_type_add-place.css);
-@import url(../blocks/popup/__container/_type/popup__container_type_edit-profile.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_form.css);
 
 @import url(../blocks/popup/__image-close-button/\ popup__image-close-button.css);
 @import url(../blocks/popup/__image-description/popup__image-description.css);

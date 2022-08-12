@@ -9,8 +9,12 @@
   </head>
   <body class="page">
     <header class="header">
+<<<<<<< Updated upstream
       <h1 class="header__title">Mesto</h1>
       <a href="#" class="link"
+=======
+      <a href="#" class="link header__link"
+>>>>>>> Stashed changes
         ><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
       /></a>
     </header>
@@ -24,34 +28,37 @@
         </div>
         <button class="button profile__add-person-button"></button>
       </section>
-      <section class="elements">
-      </section>
+      <section class="elements"></section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_form popup_type_edit-profile">
-      <form class="popup__container popup__container_type_edit-profile">
+      <form class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
         <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
-        <button class="button popup__submit-button popup__profile-submit-button" type="submit">Сохранить</button>
+        <button class="button popup__submit-button popup__profile-submit-button" type="submit">
+          Сохранить
+        </button>
       </form>
     </section>
     <section class="popup popup_type_form popup_type_add-place">
-      <form class="popup__container popup__container_type_add-place">
+      <form class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
         <h3 class="popup__title">Новое место</h3>
         <input class="input popup__place-name-input" placeholder="Название" type="text" />
         <input class="input popup__place-link-input" placeholder="Ссылка на картинку" type="text" />
-        <button class="button popup__submit-button popup__place-submit-button" type="submit">Создать</button>
+        <button class="button popup__submit-button popup__place-submit-button" type="submit">
+          Создать
+        </button>
       </form>
     </section>
     <section class="popup popup_type_image">
       <div class="popup__container popup__container_type_image">
         <button class="button popup__close-button popup__image-close-button"></button>
-        <img class="popup__image" src="./images/place-2.jpg" alt="Фото">
+        <img class="popup__image" src="./images/place-2.jpg" alt="Фото" />
         <p class="popup__image-description">Карачаево-Черкессия</p>
       </div>
     </section>
