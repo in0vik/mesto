@@ -34,8 +34,8 @@ popupCloseButtons.forEach((btn) => {
 
 // listeners on submit buttons
 
-const popupContainers = document.querySelectorAll(".popup__container_type_form");
-popupContainers.forEach((btn) => {
+const popupForms = document.querySelectorAll(".popup__form");
+popupForms.forEach((btn) => {
   btn.addEventListener("submit", handleProfileFormSubmit);
 });
 
@@ -50,7 +50,7 @@ function handleProfileFormSubmit(evt) {
     renderItem(cardElements, popupPlaceName.value, popupPlaceLink.value);
   }
   evt.target.reset();
-  closePopup(evt.target.parentElement);
+  closePopup(evt.target.closest(".popup"));
 }
 
 // profile edit
