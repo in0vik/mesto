@@ -9,9 +9,7 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header__title">Mesto</h1>
-      <a href="#" class="link header__link"
-        ><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
+      <a href="#" class="link header__link"><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
       /></a>
     </header>
     <main class="content">
@@ -30,34 +28,26 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_form popup_type_edit-profile">
-      <div class="popup__container popup__container_type_form">
+      <form class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
-        <form class="popup__form">
-          <h3 class="popup__title">Редактировать профиль</h3>
-          <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
-          <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
-          <button class="button popup__submit-button popup__profile-submit-button" type="submit">
-            Сохранить
-          </button>
-        </form>
-      </div>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
+        <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
+        <button class="button popup__submit-button popup__profile-submit-button" type="submit">
+          Сохранить
+        </button>
+      </form>
     </section>
     <section class="popup popup_type_form popup_type_add-place">
-      <div class="popup__container popup__container_type_form">
+      <form class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
-        <form class="popup__form">
-          <h3 class="popup__title">Новое место</h3>
-          <input class="input popup__place-name-input" placeholder="Название" type="text" />
-          <input
-            class="input popup__place-link-input"
-            placeholder="Ссылка на картинку"
-            type="text"
-          />
-          <button class="button popup__submit-button popup__place-submit-button" type="submit">
-            Создать
-          </button>
-        </form>
-      </div>
+        <h2 class="popup__title">Новое место</h2>
+        <input class="input popup__place-name-input" placeholder="Название" type="text" />
+        <input class="input popup__place-link-input" placeholder="Ссылка на картинку" type="text" />
+        <button class="button popup__submit-button popup__place-submit-button" type="submit">
+          Создать
+        </button>
+      </form>
     </section>
     <section class="popup popup_type_image">
       <div class="popup__container popup__container_type_image">
@@ -70,7 +60,7 @@
       <article class="card">
         <img src="./images/place-2.jpg" alt="Фото горы Эльбрус" class="card__image" />
         <div class="card__info-block">
-          <h3 class="card__title">Гора Эльбрус</h3>
+          <h2 class="card__title">Гора Эльбрус</h2>
           <button class="button card__like-button"></button>
         </div>
         <button class="button card__delete-button"></button>
