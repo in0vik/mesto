@@ -114,7 +114,6 @@ function getCard(title, image) {
 
   newImage.addEventListener("click", function (e) {
     const cardTitleElement = e.target.closest(".card").querySelector(".card__title");
-    console.log(e.target.parentElement);
     openPopup(popupTypeImageElement);
     popupImageDescription.textContent = cardTitleElement.textContent;
     popupImage.src = e.target.src;
