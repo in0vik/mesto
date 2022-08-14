@@ -9,7 +9,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <a href="#" class="link header__link"><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
+      <a href="#" class="link header__link"
+        ><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
       /></a>
     </header>
     <main class="content">
@@ -28,26 +29,34 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_form popup_type_edit-profile">
-      <form class="popup__container popup__container_type_form">
+      <div class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
-        <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
-        <button class="button popup__submit-button popup__profile-submit-button" type="submit">
-          Сохранить
-        </button>
-      </form>
+        <form class="popup__form">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
+          <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
+          <button class="button popup__submit-button popup__profile-submit-button" type="submit">
+            Сохранить
+          </button>
+        </form>
+      </div>
     </section>
     <section class="popup popup_type_form popup_type_add-place">
-      <form class="popup__container popup__container_type_form">
+      <div class="popup__container popup__container_type_form">
         <button class="button popup__close-button"></button>
-        <h3 class="popup__title">Новое место</h3>
-        <input class="input popup__place-name-input" placeholder="Название" type="text" />
-        <input class="input popup__place-link-input" placeholder="Ссылка на картинку" type="text" />
-        <button class="button popup__submit-button popup__place-submit-button" type="submit">
-          Создать
-        </button>
-      </form>
+        <form class="popup__form">
+          <h3 class="popup__title">Новое место</h3>
+          <input class="input popup__place-name-input" placeholder="Название" type="text" />
+          <input
+            class="input popup__place-link-input"
+            placeholder="Ссылка на картинку"
+            type="text"
+          />
+          <button class="button popup__submit-button popup__place-submit-button" type="submit">
+            Создать
+          </button>
+        </form>
+      </div>
     </section>
     <section class="popup popup_type_image">
       <div class="popup__container popup__container_type_image">
