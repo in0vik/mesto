@@ -40,13 +40,22 @@
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__place-link-input/popup__place-link-input.css);
 @import url(../blocks/popup/__place-name-input/popup__place-name-input.css);
-@import url(../blocks/popup/__place-submit-button/popup__place-submit-button.css);
 @import url(../blocks/popup/__profile-job-input/popup__profile-job-input.css);
 @import url(../blocks/popup/__profile-name-input/popup__profile-name-input.css);
-@import url(../blocks/popup/__profile-submit-button/popup__profile-submit-button.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
+@import url(../blocks/popup/__submit-button/_type/popup__submit-button_type_disable.css);
+@import url(../blocks/popup/__submit-button/_type/popup__submit-button_type_place.css);
+@import url(../blocks/popup/__submit-button/_type/popup__submit-button_type_profile.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/_type/popup_type_add-place.css);
 @import url(../blocks/popup/_type/popup_type_edit-profile.css);
 @import url(../blocks/popup/_type/popup_type_image.css);
+
+@import url(../blocks/popup/__error-message/popup__error-message.css);
+@import url(../blocks/popup/__error-message/_type/popup__error-message_type_place-link.css);
+@import url(../blocks/popup/__error-message/_type/popup__error-message_type_place-name.css);
+@import url(../blocks/popup/__error-message/_type/popup__error-message_type_profile-job.css);
+@import url(../blocks/popup/__error-message/_type/popup__error-message_type_profile-name.css);
+@import url(../blocks/popup/__error-message/_type/popup__error-message_type_visible.css);
+@import url(../blocks/input/_error/input_error.css);

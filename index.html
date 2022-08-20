@@ -9,7 +9,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <a href="#" class="link header__link"><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
+      <a href="#" class="link header__link"
+        ><img src="./images/logo.svg" alt="Логотип Mesto" class="logo logo_place_header"
       /></a>
     </header>
     <main class="content">
@@ -28,23 +29,57 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_form popup_type_edit-profile">
-      <form class="popup__container popup__container_type_form">
+      <form class="popup__container popup__container_type_form" novalidate>
         <button class="button popup__close-button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="input popup__profile-name-input" placeholder="Имя" type="text" />
-        <input class="input popup__profile-job-input" placeholder="О себе" type="text" />
-        <button class="button popup__submit-button popup__profile-submit-button" type="submit">
+        <input
+          class="input popup__profile-name-input"
+          id="profile-name"
+          placeholder="Имя"
+          type="text"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+        <span class="popup__error-message popup__error-message_type_profile-name"></span>
+        <input
+          class="input popup__profile-job-input"
+          id="profile-job"
+          placeholder="О себе"
+          type="text"
+          minlength="2"
+          maxlength="200"
+          required
+        />
+        <span class="popup__error-message popup__error-message_type_profile-job"></span>
+        <button class="button popup__submit-button popup__submit-button_type_profile" type="submit">
           Сохранить
         </button>
       </form>
     </section>
     <section class="popup popup_type_form popup_type_add-place">
-      <form class="popup__container popup__container_type_form">
+      <form class="popup__container popup__container_type_form" novalidate>
         <button class="button popup__close-button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <input class="input popup__place-name-input" placeholder="Название" type="text" />
-        <input class="input popup__place-link-input" placeholder="Ссылка на картинку" type="text" />
-        <button class="button popup__submit-button popup__place-submit-button" type="submit">
+        <input
+          class="input popup__place-name-input"
+          id="place-name"
+          placeholder="Название"
+          type="text"
+          minlength="1"
+          maxlength="30"
+          required
+        />
+        <span class="popup__error-message popup__error-message_type_place-name"></span>
+        <input
+          class="input popup__place-link-input"
+          id="place-link"
+          placeholder="Ссылка на картинку"
+          type="url"
+          required
+        />
+        <span class="popup__error-message popup__error-message_type_place-link"></span>
+        <button class="button popup__submit-button popup__submit-button_type_place" type="submit">
           Создать
         </button>
       </form>
@@ -67,5 +102,6 @@
       </article>
     </template>
     <script src="./pages/script.js"></script>
+    <script src="./pages/validate.js"></script>
   </body>
 </html>

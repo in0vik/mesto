@@ -12,15 +12,27 @@ const popupPlaceLink = document.querySelector(".popup__place-link-input");
 const popupEditButton = document.querySelector(".profile__edit-button");
 const popupImage = document.querySelector(".popup__image");
 const popupImageDescription = document.querySelector(".popup__image-description");
+const popupForms = document.querySelectorAll(".popup__container_type_form");
 
 // open popup
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  window.addEventListener("keydown", closePopupOnEsc);
 }
 
 // close popup
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  window.removeEventListener("keydown", closePopupOnEsc);
+}
+
+// close popup on escape
+
+function closePopupOnEsc(e) {
+  const openedPopup = document.querySelector(".popup_opened");
+  if (e.key === "Escape") {
+    closePopup(openedPopup);
+  }
 }
 
 // listeners on close buttons
@@ -32,21 +44,30 @@ popupCloseButtons.forEach((btn) => {
   });
 });
 
+//listeners on popup overlay for closing popups
+const popups = document.querySelectorAll(".popup");
+popups.forEach((popup) => {
+  popup.addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+      closePopup(popup);
+    }
+  });
+});
+
 // listeners on submit buttons
 
-const popupForms = document.querySelectorAll(".popup__form");
-popupForms.forEach((btn) => {
-  btn.addEventListener("submit", handleProfileFormSubmit);
+popupForms.forEach((form) => {
+  form.addEventListener("submit", handleProfileFormSubmit);
 });
 
 // submit form button
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  if (evt.target.querySelector(".popup__profile-submit-button")) {
+  if (evt.target.querySelector(".popup__submit-button_type_profile")) {
     profileNameElement.textContent = nameInput.value;
     profileJobElement.textContent = jobInput.value;
   }
-  if (evt.target.querySelector(".popup__place-submit-button")) {
+  if (evt.target.querySelector(".popup__submit-button_type_place")) {
     renderItem(cardElements, popupPlaceName.value, popupPlaceLink.value);
   }
   evt.target.reset();
@@ -59,6 +80,7 @@ popupEditButton.addEventListener("click", () => {
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
   openPopup(popupTypeEditProfileElement);
+  enableValidation();
 });
 
 // card generator
