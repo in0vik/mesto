@@ -29,8 +29,8 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_form popup_type_edit-profile">
-      <form class="popup__container popup__container_type_form" novalidate>
-        <button class="button popup__close-button"></button>
+      <form class="popup__container popup__container_type_form popup__container_type_profile-form" novalidate>
+        <button class="button popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <input
           class="input popup__profile-name-input"
@@ -58,15 +58,15 @@
       </form>
     </section>
     <section class="popup popup_type_form popup_type_add-place">
-      <form class="popup__container popup__container_type_form" novalidate>
-        <button class="button popup__close-button"></button>
+      <form class="popup__container popup__container_type_form popup__container_type_place-form" novalidate>
+        <button class="button popup__close-button" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
         <input
           class="input popup__place-name-input"
           id="place-name"
           placeholder="Название"
           type="text"
-          minlength="1"
+          minlength="2"
           maxlength="30"
           required
         />
@@ -86,7 +86,7 @@
     </section>
     <section class="popup popup_type_image">
       <div class="popup__container popup__container_type_image">
-        <button class="button popup__close-button popup__image-close-button"></button>
+        <button class="button popup__close-button popup__image-close-button" type="button"></button>
         <img class="popup__image" src="./images/place-2.jpg" alt="Фото" />
         <p class="popup__image-description">Карачаево-Черкессия</p>
       </div>
