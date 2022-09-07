@@ -25,10 +25,8 @@ class FormValidator {
   _checkInputValidity (inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
-      console.log(inputElement, inputElement.validationMessage)
     } else {
       this._hideInputError(inputElement);
-      console.log(inputElement, inputElement.validationMessage)
     }
   }
 

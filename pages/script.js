@@ -94,29 +94,28 @@ popupFormPlace.addEventListener("submit", handlePlaceFormSubmit);
 // submit form button
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  if (evt.target.checkValidity()) {
-    profileNameElement.textContent = nameInput.value;
-    profileJobElement.textContent = jobInput.value;
-    evt.target.reset();
-    closePopup(evt.target.closest(".popup"));
-  }
+  console.log(evt.target);
+  profileNameElement.textContent = nameInput.value;
+  profileJobElement.textContent = jobInput.value;
+  evt.target.reset();
+  closePopup(evt.target.closest(".popup"));
+
 }
 
 function handlePlaceFormSubmit(evt) {
   evt.preventDefault();
-  // if (evt.target.checkValidity()) {
-    const submitButton = evt.target.querySelector(".popup__submit-button_type_place");
-    const newCardData = {};
-    newCardData.name = popupPlaceName.value;
-    newCardData.link = popupPlaceLink.value;
+  console.log(evt.target);
+  const submitButton = evt.target.querySelector(".popup__submit-button_type_place");
+  const newCardData = {};
+  newCardData.name = popupPlaceName.value;
+  newCardData.link = popupPlaceLink.value;
 
-    const newCard = new Card(newCardData, 'card-template')
-    renderItem(cardElements, newCard);
-    evt.target.reset();
-    submitButton.disabled = true;
-    submitButton.classList.add("popup__submit-button_type_disable");
-    closePopup(evt.target.closest(".popup"));
-  // }
+  const newCard = new Card(newCardData, 'card-template')
+  renderItem(cardElements, newCard);
+  evt.target.reset();
+  submitButton.disabled = true;
+  submitButton.classList.add("popup__submit-button_type_disable");
+  closePopup(evt.target.closest(".popup"));
 }
 
 // profile edit
