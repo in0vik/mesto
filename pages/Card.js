@@ -3,10 +3,11 @@ import { openImageHandler } from './script.js';
 
 
 class Card {
-  constructor (cardData, cardTemplateSelector) {
+  constructor (cardData, cardTemplateSelector, handleCardClick) {
     this._name = cardData.name;
     this._link = cardData.link;  
     this._templateSelector = cardTemplateSelector;
+    this._handleCardClick = handleCardClick;
   };
 
   _getTemplate() {
@@ -15,6 +16,20 @@ class Card {
     .content
     .cloneNode(true);
     return newCardElement;
+  }
+
+  _setEventListeners() {
+    this._likeButtonElement.addEventListener("click", function () {
+      this.classList.toggle("card__like-button_active");
+    });
+
+    this._deleteButtonElement.addEventListener("click", function (e) {
+      this.closest(".card").remove();
+    });
+
+    this._imageElement.addEventListener("click", () => {
+      this._handleCardClick(this._titleElement.textContent, this._imageElement.src);
+    });
   }
 
   getCard() {
@@ -26,18 +41,7 @@ class Card {
     this._titleElement.textContent = this._name;
     this._imageElement.src = this._link;
     this._imageElement.alt = this._name;
-
-    this._likeButtonElement.addEventListener("click", function () {
-      this.classList.toggle("card__like-button_active");
-    });
-
-    this._deleteButtonElement.addEventListener("click", function (e) {
-      this.closest(".card").remove();
-    });
-
-    this._imageElement.addEventListener("click", (e) => {
-      openImageHandler(e);
-    });
+    this._setEventListeners();
 
     return this._element;
   } 
