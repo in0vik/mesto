@@ -164,6 +164,7 @@ addCardButton.addEventListener("click", () => {
   popupPlaceName.value = '';
   popupPlaceLink.value = '';
   formValidators.placeForm.resetValidation();
+  formValidators.placeForm.toggleButtonState();
   openPopup(popupTypeAddPlaceElement);
 });
 
