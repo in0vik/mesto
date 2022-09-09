@@ -31,6 +31,7 @@ const enableValidation = (config) => {
     const validator = new FormValidator(config, formElement);
     const formName = formElement.getAttribute('name');
     formValidators[formName] = validator;
+    formValidators[formName].enableValidation();
   })
 }
 
@@ -81,15 +82,8 @@ function handleCardClick (name, link) {
   openPopup(popupTypeImageElement);
   popupImageDescription.textContent = name;
   popupImage.src = link;
+  popupImage.alt = name;
 }
-
-// listeners on close buttons
-// const popupCloseButtons = Array.from(document.querySelectorAll(".popup__close-button"));
-// popupCloseButtons.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     closePopup(e.target.closest(".popup"));
-//   });
-// });
 
 //listeners on popup overlay for closing popups
 const popups = Array.from(document.querySelectorAll(".popup"));
@@ -141,7 +135,6 @@ popupEditButton.addEventListener("click", (e) => {
   jobInput.value = profileJobElement.textContent;
   
   formValidators.profileForm.resetValidation();
-  formValidators.profileForm.enableValidation();
   openPopup(popupTypeEditProfileElement);
 });
 
@@ -171,7 +164,6 @@ addCardButton.addEventListener("click", () => {
   popupPlaceName.value = '';
   popupPlaceLink.value = '';
   formValidators.placeForm.resetValidation();
-  formValidators.placeForm.enableValidation();
   openPopup(popupTypeAddPlaceElement);
 });
 
