@@ -1,8 +1,6 @@
-export { Card };
-import { openImageHandler } from './script.js';
+import { selectors } from "../utils/constants.js";
 
-
-class Card {
+export default class Card {
   constructor (cardData, cardTemplateSelector, handleCardClick) {
     this._name = cardData.name;
     this._link = cardData.link;  
@@ -20,11 +18,11 @@ class Card {
 
   _setEventListeners() {
     this._likeButtonElement.addEventListener("click", function () {
-      this.classList.toggle("card__like-button_active");
+      this.classList.toggle(selectors.cardLikeButtonActive);
     });
 
     this._deleteButtonElement.addEventListener("click", function (e) {
-      this.closest(".card").remove();
+      this.closest(selectors.card).remove();
     });
 
     this._imageElement.addEventListener("click", () => {
@@ -34,10 +32,10 @@ class Card {
 
   getCard() {
     this._element = this._getTemplate();
-    this._titleElement = this._element.querySelector('.card__title');
-    this._imageElement = this._element.querySelector('.card__image');
-    this._likeButtonElement = this._element.querySelector('.card__like-button');
-    this._deleteButtonElement = this._element.querySelector('.card__delete-button');
+    this._titleElement = this._element.querySelector(selectors.cardTitle);
+    this._imageElement = this._element.querySelector(selectors.cardImage);
+    this._likeButtonElement = this._element.querySelector(selectors.cardLikeButton);
+    this._deleteButtonElement = this._element.querySelector(selectors.cardDeleteButton);
     this._titleElement.textContent = this._name;
     this._imageElement.src = this._link;
     this._imageElement.alt = this._name;

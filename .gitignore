@@ -27,3 +27,5 @@ Temporary Items
 
 # my dirs
 .vscode
+node_modules
+dist
