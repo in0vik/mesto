@@ -1,9 +1,10 @@
-import Card from "./Card.js";
-import { initialCards } from "./cards.js";
-import PopupWithForm from "./PopupWithForm.js";
-import FormValidator from "./FormValidator.js";
-import PopupWithImage from "./PopupWithImage.js";
+import Card from "../components/Card.js";
+import { initialCards } from "../utils/cards.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import { selectors } from "../utils/constants.js";
+import './index.css';
 
 const cardElements = document.querySelector(selectors.cardElements);
 
