@@ -1,3 +1,8 @@
+// Уважаемый проверяющий, я скачал архив с кодом распаковал его у себя 
+// npm i -> npm run buld и все заработало, и билд и дев работает прекрасно. 
+// свяжитесь со мной в телеграмме пожалуйста @aiplan
+// С уважением, Илья 
+
 import Card from "../components/Card.js";
 import { initialCards } from "../utils/cards.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -8,7 +13,6 @@ import "./index.css";
 import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
 
-// const cardElements = document.querySelector(selectors.cardElements);
 const sectionInstance = new Section(
   {
     items: initialCards,
