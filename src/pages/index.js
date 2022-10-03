@@ -1,10 +1,3 @@
-// да вы правы ошибка в этом css файле! Там был пробел в начале файла. 
-// Предположу у вас не завелось потому что у вас win а у меня *nix, из за отличия в синтаксе в оболочках.
-// в винде на сколько я знаю обратный слеш это разделитель пути и вероятно он его как то не правильно парсит.
-// второй варинат это опять же парсер винды как то этот пробел по своему обратывает.
-//
-// Спасибо что уделили время разобраться!
-
 import Card from "../components/Card.js";
 import { initialCards } from "../utils/cards.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -68,14 +61,10 @@ enableValidation({
 // add a new card
 
 const addCardButton = document.querySelector(selectors.addCardButton);
-const popupPlaceName = document.querySelector(selectors.popupPlaceName);
-const popupPlaceLink = document.querySelector(selectors.popupPlaceLink);
 
-function handlePlaceSubmitButton(data) {
-  data.name = popupPlaceName.value;
-  data.link = popupPlaceLink.value;
-  const newCard = createCard(data, selectors.cardTemplate, handleCardClick);
-  cardsSection.addItem(newCard)
+function handlePlaceSubmitButton({ placename, link }) {
+  const newCard = createCard({ name: placename, link }, selectors.cardTemplate, handleCardClick);
+  cardsSection.addItem(newCard);
   popupWithPlaceForm.close();
 }
 
@@ -87,8 +76,6 @@ const popupWithPlaceForm = new PopupWithForm(
 popupWithPlaceForm.setEventListeners();
 
 addCardButton.addEventListener("click", () => {
-  popupPlaceName.value = "";
-  popupPlaceLink.value = "";
   formValidators.placeForm.resetValidation();
   formValidators.placeForm.toggleButtonState();
   popupWithPlaceForm.open();
@@ -125,8 +112,8 @@ function handleProfileEditButton() {
 
 function handleFormProfileSubmit(data) {
   userInfoInstance.setUserInfo({
-    username: nameInput.value,
-    job: jobInput.value,
+    username: data.username,
+    job: data.job,
   });
   popupWithProfileForm.close();
 }

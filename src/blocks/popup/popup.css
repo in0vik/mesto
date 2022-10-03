@@ -8,7 +8,7 @@
   position: fixed;
   background-color: rgba(0, 0, 0, .5);
   opacity: 0;
-  transition: opacity .4s ease-out;
+  transition: opacity .4s, visibility .4s ease-out;
   flex-direction: column;
   justify-content: center;
   align-items: center;

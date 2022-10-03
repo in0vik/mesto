@@ -20,10 +20,6 @@ export default class Popup {
     
   }
 
-  _removeEventListeners() {
-    this._popup.removeEventListener("click", this._handleCloseAction);
-  }
-
   _handleCloseAction = (e) => {
     if (e.target.classList.contains(this._selectors.popupCloseButtonForContains)) {
       this.close();

@@ -1,8 +1,8 @@
 export default class Card {
-  constructor (cardData, cardTemplateSelector, handleCardClick, selectors) {
+  constructor ({ name, link }, cardTemplateSelector, handleCardClick, selectors) {
     this._selectors = selectors;
-    this._name = cardData.name;
-    this._link = cardData.link;  
+    this._name = name;
+    this._link = link;  
     this._templateSelector = cardTemplateSelector;
     this._handleCardClick = handleCardClick;
   };
@@ -29,7 +29,6 @@ export default class Card {
   _handleDeleteButton = () => {
     this._element.remove();
     this._element = null;
-    
   }
 
   _handleImageClick = () => {
