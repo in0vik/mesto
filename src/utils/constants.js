@@ -8,6 +8,7 @@ export const selectors = {
   cardTemplate: 'card-template',
   popupWithImage: '.popup_type_image',
   popupAddPlace: '.popup_type_add-place',
+  popupDeleteConfirm: '.popup_type_delete-card',
   popupForm: '.popup_type_form',
   popupEditProfile: '.popup_type_edit-profile',
   formSelector: ".popup__container_type_form",
@@ -34,5 +35,12 @@ export const selectors = {
   cardImage: '.card__image',
   cardLikeButton: '.card__like-button',
   cardDeleteButton: '.card__delete-button',
-  card: ".card"
+  card: ".card",
+  likeCounterElement: ".card__like-button-counter",
+  formSubmitDelete: ".popup__container_type_delete-card",
+  changeAvatarOverlay: ".profile__avatar-change-overlay",
+  profileAvatar: ".profile__avatar",
+  popupAvatar: ".popup_type_update-avatar",
+  popupAvatarInput: ".popup__avatar-link-input",
+  
 } 

@@ -3,10 +3,16 @@ export default class Section {
     this._container = document.querySelector(containerSelector);
     this._items = items;
     this._renderer = renderer;
+  
   }
 
-  addItem(element) {
-    this._container.prepend(element);
+  addItem(element, addType) {
+    if (addType === 'append') {
+      this._container.append(element);
+    } else if (addType === 'prepend') {
+      this._container.prepend(element);
+    }
+    
   }
 
   renderItems() {

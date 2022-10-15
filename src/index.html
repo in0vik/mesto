@@ -14,7 +14,11 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img src="<%=require('./images/jacques.jpg')%>" alt="Аватар" class="profile__avatar" />
+        <div class="profile__avatar-container">
+          <div class="profile__avatar-change-overlay link"></div>
+          <img src="<%=require('./images/jacques.jpg')%>" alt="Аватар" class="profile__avatar link" />
+        </div>
+
         <div class="profile__information">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="button profile__edit-button" type="button"></button>
@@ -94,12 +98,42 @@
         <p class="popup__image-description">Карачаево-Черкессия</p>
       </div>
     </section>
+    <section class="popup popup_type_delete-card">
+      <form class="popup__container popup__container_type_delete-card">
+        <button class="button popup__close-button" type="button"></button>
+        <h2 class="popup__title popup__title_type_delete-card">Вы уверены?</h2>
+        <button class="button popup__submit-button popup__submit-button_type_delete-card" type="submit">
+          Да
+        </button>
+      </form>
+    </section>
+    <section class="popup popup_type_update-avatar">
+      <form class="popup__container popup__container_type_form popup__container_type_update-avatar">
+        <button class="button popup__close-button" type="button"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <input
+        class="input popup__avatar-link-input"
+        id="update-avatar"
+        name="link"
+        placeholder="Ссылка на аватар"
+        type="url"
+        required
+      />
+      <span class="popup__error-message popup__error-message_type_update-avatar"></span>
+        <button class="button popup__submit-button popup__submit-button_update-avatar" type="submit">
+          Сохранить
+        </button>
+      </form>
+    </section>
     <template id="card-template">
       <article class="card">
         <img src="<%=require('./images/place-2.jpg')%>" alt="Фото горы Эльбрус" class="card__image" />
         <div class="card__info-block">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="button card__like-button"></button>
+          <div class="card__like-container">
+            <button class="button card__like-button"></button>
+            <p class="card__like-button-counter">0</p>
+          </div>
         </div>
         <button class="button card__delete-button"></button>
       </article>
