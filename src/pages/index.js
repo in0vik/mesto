@@ -14,7 +14,10 @@ import PopupConfirm from "../components/PopupConfirm.js";
 
 const api = new Api({
   baseUrl: "https://mesto.nomoreparties.co/v1/cohort-51",
-  token: "728a51fd-95af-420a-8e63-afea89fd240c",
+  headers: {
+    authorization: "728a51fd-95af-420a-8e63-afea89fd240c",
+    'Content-Type': 'application/json'
+  }
 });
 
 const userInfo = new UserInfo({
@@ -134,9 +137,14 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
         const newCard = createCard(cardData, userInfoData);
         cardsSection.addItem(newCard, "prepend");
       })
+        .then(() => {
+        popupWithPlaceForm.close();
+      })
+        .finally(() => {
+          popupWithPlaceForm.loading(false);
+        })
         .catch(err => console.log(err));
-      popupWithPlaceForm.close();
-      popupWithPlaceForm.loading(false);
+      
     }
 
     popupWithPlaceForm.setEventListeners();
@@ -160,8 +168,12 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
       popupAvatar.loading(true);
       api.updateAvatar(popupAvatarInput.value)
         .then((res) => {
-          popupAvatar.close();
           userInfo.setUserAvatar(res.avatar);
+        })
+        .then(() => {
+          popupAvatar.close();
+        })
+        .finally(() => {
           popupAvatar.loading(false);
         })
         .catch(err => console.log(err));
@@ -204,11 +216,18 @@ function handleFormProfileSubmit(data) {
     name: data.username,
     about: data.job,
   })
+    .then(() => {
+      userInfo.setUserInfo({
+        username: data.username,
+        job: data.job,
+      });
+  })
+    .then(() => {
+    popupWithProfileForm.close();
+  })
+    .finally(() => {
+      popupWithProfileForm.loading(false);
+  })
     .catch(err => console.log(err));
-  userInfo.setUserInfo({
-    username: data.username,
-    job: data.job,
-  });
-  popupWithProfileForm.close();
-  popupWithProfileForm.loading(false);
+  
 }
