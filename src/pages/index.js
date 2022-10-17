@@ -27,6 +27,7 @@ const userInfo = new UserInfo({
 });
 
 const popupConfirm = new PopupConfirm(selectors.popupDeleteConfirm, selectors);
+popupConfirm.setEventListeners();
 const popupWithImage = new PopupWithImage(selectors.popupWithImage, selectors);
 
 const popupWithProfileForm = new PopupWithForm(
@@ -54,37 +55,36 @@ function createCard(cardData, currentUserData) {
       handleCardClick: (name, link) => {
         popupWithImage.open({ link, name });
       },
-      handleDeleteIconClick: () => {
+      handleDeleteIconClick: (card) => {
         popupConfirm.open();
-        popupConfirm.setSubmitAction((evt) => {
-          evt.preventDefault();
+        popupConfirm.setSubmitAction(() => {
           api
             .deleteCard(cardData._id)
             .then(() => {
-              newCard.deleteCard();
+              card.deleteCard();
               popupConfirm.close();
             })
             .catch((err) => console.log(err));
         });
-        popupConfirm.setEventListeners();
       },
-      handleAddLike: () => {
+      handleAddLike: (card) => {
         api
           .likeCard(cardData._id)
           .then((res) => {
-            newCard.updateCounter(res);
+            card.updateCounter(res);
+            card.addLikeClass();
           })
           .catch((err) => console.log(err));
       },
-      handleRemoveLike: () => {
+      handleRemoveLike: (card) => {
         api
           .dislikeCard(cardData._id)
           .then((res) => {
-            newCard.updateCounter(res);
+            card.updateCounter(res);
+            card.removeLikeClass();
           })
           .catch((err) => console.log(err));
       },
-      handleLike: () => {},
     },
     selectors.cardTemplate,
     selectors,
@@ -158,9 +158,12 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     // change avatar
     const popupAvatar = new PopupWithForm(selectors.popupAvatar, handleAvatar, selectors);
     const changeAvatarButton = document.querySelector(selectors.changeAvatarOverlay);
+
+    popupAvatar.setEventListeners();
     changeAvatarButton.addEventListener("click", () => {
+      formValidators.avatarForm.resetValidation();
+      formValidators.avatarForm.toggleButtonState();
       popupAvatar.open();
-      popupAvatar.setEventListeners();
     });
 
     const popupAvatarInput = document.querySelector(selectors.popupAvatarInput);

@@ -7,18 +7,14 @@ export default class PopupConfirm extends Popup {
   }
 
   setEventListeners() {
-    this._form.addEventListener("submit", this._submitAction);
+    this._form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      this._submitAction();
+    });
     super.setEventListeners();
-  }
-
-  close() {
-    this._popup.classList.remove(this._selectors.popupOpened);
-    document.removeEventListener("keydown", this._handleEscClose);
-    this._form.removeEventListener("submit", this._submitAction);
   }
 
   setSubmitAction(action) {
     this._submitAction = action;
   }
-
 }
