@@ -41,12 +41,9 @@ export default class PopupWithForm extends Popup {
     if (isLoading) {
       this._submitButton.textContent = 'Сохранение...'
       this._submitButton.disable = true;
-      this._submitButton.classList.add(this._selectors.inactiveButtonClass);
     } else {
       this._submitButton.textContent = 'Сохранить'
       this._submitButton.disable = false;
-      this._submitButton.classList.remove(this._selectors.inactiveButtonClass);
     }
-    
   }
 }

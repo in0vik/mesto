@@ -166,10 +166,9 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
       popupAvatar.open();
     });
 
-    const popupAvatarInput = document.querySelector(selectors.popupAvatarInput);
-    function handleAvatar() {
+    function handleAvatar(inputs) {
       popupAvatar.loading(true);
-      api.updateAvatar(popupAvatarInput.value)
+      api.updateAvatar(inputs.link)
         .then((res) => {
           userInfo.setUserAvatar(res.avatar);
         })
